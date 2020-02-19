@@ -1,0 +1,322 @@
+# Remise du travail pratique 1
+
+## Identification
+
+- Cours      : Utilisation et administration des systèmes informatiques
+- Sigle      : INF1070
+- Session    : Automne 2019
+- Groupe     : `<20>`
+- Enseignant : `<Moussa Abdenbi>`
+- Auteur     : `<El Mahdi Jamali>` (`<JAME01019708>`)
+- Auteur     : `<votre nom>` (`<votre code permanent>`)
+
+
+
+
+## Solution de la mission 1 d'exemple
+
+### État de la mission : résolue
+
+### Démarche
+
+J'ai utilisé la commande `echo` pour afficher les trois lignes.
+J'ai utilisé l'option `-e` pour interpréter les caractères `\n` correctement.
+J'ai redirigé le résultat dans le fichier `exemple.txt` :
+
+```sh
+echo -e 'alpha\nbeta\ngamma\n' > exemple.txt
+```
+
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
+
+
+
+
+## Solution de la mission 2
+
+### État de la mission : résolue
+
+### Démarche
+
+J'ai utilisé la commande `mkdir` pour créer des répertoires.
+J'ai utilisé l'option `-p` pour créer des répertoires parents.
+J'ai mis chaque chemin relatif ensemble pour pouvoir créer l'arborscence demandée.:
+
+```sh
+mkdir -p cours/inf1070/automne19/  cours/inf1070/hiver19/ cours/inf1132/automne19/ cours/inf1132/hiver19/ cours/inf5130/automne19/ cours/inf5130/hiver19/
+```
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
+
+
+
+## Solution de la mission 3
+
+### État de la mission : résolue
+
+### Démarche
+
+J'ai utilisé la commande `paste` pour fusionner le contenu du fichier `prenoms.txt`,`genres.txt` et `origines.txt`.
+J'ai utilisé l'option `-d` pour pouvoir delimiter le contenu de chacun et j'ai ensuite rajouter ";" qui est mon delimiteur.
+J'ai ensuite ecris le nom des trois fichier et 'ai redirigé le résultat dans le fichier `info.csv`:
+
+
+
+```sh
+paste -d ";" prenoms.txt genres.txt origines.txt > info.csv
+```
+
+Esuite, en entrant
+```sh
+gash check
+``` 
+la mission a été validée, ce qui a conclu cette mission.
+
+
+
+
+## Solution de la mission 4
+
+### État de la mission : résolue
+### Démarche
+
+J'ai utilisé la commande `head` pour afficher les premières lignes du fichier.
+J'ai utilisé en option `-23` ce qui m'affiche les 23 premières lignes.
+J'ai utilisé un tube pour pouvoir mettre une seconde commande.
+J'ai utilisé la commande `tail` pour m'afficher les dernières lignes du fichier.
+J'ai utilisé en option `-1` pour m'afficher que la dernière ligne des 23 lignes affichées précedemment.:
+
+```sh
+head -23 histoire | tail -1
+```
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
+
+
+
+
+## Solution de la mission 5
+
+### État de la mission : résolue
+
+### Démarche
+
+J'ai utilisé la commande `cat` suivie du fichier `prenoms.txt` pour afficher le contenu du fichier prenoms.txt
+J'ai utilisé un tube de conduite pour pouvoir utilisé la commande `grep`suivie du nombre '2003' pour qu'on m'affiche seulement les lignes contenant le nombre 2003.
+J'ai utilié un tube de conduite pour pouvoir utilisé la commande `wc` avec l'option `-l` pour afficher le nombre de lignes. :
+
+```sh
+cat prenoms.txt | grep 2003 | wc -l
+```
+Ensuite, en entrant
+
+```sh
+gash check
+```
+La question 'Combien y-a-t-il de nouveau né en 2003?' a été affichéé j'ai répondu : '517'
+
+
+la mission a été validée, ce qui a conclu cette mission.
+
+
+
+
+## Solution de la mission 6
+
+### État de la mission : résolue
+
+### Démarche
+
+À compléter
+
+
+
+
+## Solution de la mission 7
+
+### État de la mission : résolue
+
+### Démarche
+
+J'ai utilisé la commande `sed` pour pouvoir éditer mon fichier.
+J'ai utilisé en option `s/Windows/Linux/g` pour changer chaque fois qu'il y avait le mot Windows par Linux.
+J'ai par ensuite taper 'linux' pour lui indiquer que c'est changement sont à faire dans le fichier linux.
+J'ai redirigé le résultat dans le fichier `linux_corrige` avec le symbole de redirection '>':
+
+```sh
+sed  's/Windows/Linux/g' linux >linux_corrige
+```
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
+
+
+
+## Solution de la mission 8
+
+### État de la mission : résolue
+
+### Démarche
+
+J'ai utilisé la commande `cat` pour afficher le fichier `bad_sites`.
+J'ai utilisé un tube de conduite pour pouvoir éxecuter une autre commande.
+J'ai utilisé la commande `tr` pour pouvoir modifier le fichier. j'ai utilisé '"[A-Z]" "[a-z]"' pour pouvoir transformer tout les caractères majuscules en miniscules.
+J'ai utilisé un tube de conduite pour pouvoir éxecuter une autre commande.
+J'ai utilisé la commande `tr` pour pouvoir effacer le caractère ' '.
+J'ai redirigé le résultat dans le fichier `good_sites` avec le symbole de redirection '>':
+
+```sh
+cat bad_sites|tr "[A-Z]" "[a-z]"| tr -d ' ' > good_sites.
+
+```
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
+
+## Solution de la mission 9
+
+### État de la mission : résolue
+
+### Démarche
+
+J'ai utilisé la commande `cat` pour afficher le fichier `histoire`.
+J'ai utilisé un tube de conduite pour pouvoir éxecuter une autre commande.
+J'ai utilisé la commande `tr` '[|]' '[\n]' ' pour pouvoir transformer tout les 
+'[|]' en saut de lignes ( '[\n]').
+J'ai utilisé un tube de conduite pour pouvoir éxecuter une autre commande.
+J'ai utilisé la commande `sort` avec l'option `-n` pour pouvoir afficher le fichier 'histoire' en ordre chronologique.
+J'ai redirigé le résultat dans le fichier `histoire_ordonnee` avec le symbole de redirection '>':
+
+```sh
+cat histoire | tr  '[|]' '[\n]' | sort -n > histoire_ordonnee
+```
+Ensuite, en entrant
+
+```sh
+gash check
+```
+
+la mission a été validée, ce qui a conclu cette mission.
+
+## Solution de la mission 10
+
+### État de la mission : résolue
+### Démarche
+
+J'ai utilisé la commande `cat` pour pouvoir afficher le fichier `prenoms.txt.`
+J'ai utilisé un tube de conduite pour pouvoir éxecuter une autre commande.
+J'ai utilisé la commande 'cut' avec l'option `-d` ` -f3` pour pouvoir afficher que la dernière colonne du fichier.
+J'ai utilisé un tube de conduite pour pouvoir éxecuter une autre commande.
+J'ai utilisé la commande `sort` avec l'option `-n` pour pouvoir afficher en ordre chronologique. Car si ce n'est pas en ordre chronologique la conduite de commandes n'affichera pas le bon résultat.
+J'ai utilisé un tube de conduite pour pouvoir éxecuter une autre commande.
+J'ai utilisé la commande 'uniq' pour que je n'ai pas plus d'une fois le même résultat dans ma colonne.
+J'ai utilisé un tube de conduite pour pouvoir éxecuter une autre commande.
+J'ai utilisé la commande `wc` avec l'option `-l` pour afficher le nombre de lignes dans mon fichier.:
+
+```sh
+cat prenoms.txt | cut -d' ' -f3 | sort -n| uniq | wc -l
+```
+Ensuite en entrant
+```sh
+gash check
+```
+La question 'Combien y-a-t-il de prénoms différents?' a été affichée et j'ai répondu '2008'
+
+la mission a été validée, ce qui a conclu cette mission.
+
+## Solution de la mission 11
+
+### État de la mission :  partiellement résolue, 
+
+### Démarche
+
+J'ai utilisé la commande `ln` pour créer des liens en option `s` pour que les liens soient symboliques :
+
+```gash check
+ln -s personnels/enseignants/Lucie_Fer directrice
+ln -s personnels/administration/soutien/Guy_Mauve rep_syndical
+ln -s personnels/administration/gestion gestion
+ln -s administration/gestion/Samira_Bien remplacement
+```
+
+Ensuite en entrant
+```sh
+gash check
+```
+
+Le terminal m'affiche que j'ai oublié le lien remplacement. J'ai essayé de plusieurs facon mais je n'ai pas réussi à créer le dernier lien avec les contraintes demandées.
+
+
+
+
+
+
+
+
+## Solution de la mission 12
+
+### État de la mission : résolue
+### Démarche
+
+J'ai utilisé la commande `cd` pour rentrer dans le répertoire `artefacts`.
+J'ai utilisé un tube de conduite pour éxecuter une autre commande.
+J'ai utilisé la commande `tree` avec l'option `-R` pour m'afficher l'arborescence du répertoire 'artefacts'. L'option `-R` me permet de faire une arborescence de chaque répertoire trouver et de m'afficher le nombre de répertoire et le nombre de fichiers dans le répétoire `artefacts`. Il faut ajouter au nombre de répétoire un répértoire de plus car il ne comptabilise pas le répétoire `artefacts` :
+
+```sh
+cd artefacts | tree -R
+```
+Ensuite en entrant
+```sh
+gash check
+```
+La question 'Combien y-a-t-il de répétoires?' a été affichée et j'ai répondu '68'(67+'artefacts').
+La question 'combien y-a-t-il de fichiers?' a été affichée et j'ai répondu '466'
+
+la mission a été validée, ce qui a conclu cette mission.
+
+
+
+
+## Solution de la mission 13
+
+### État de la mission : résolue, partiellement résolue, non résolue
+
+### Démarche
+
+À compléter
+
+
+
+
+## Solution de la mission 14
+
+### État de la mission : résolue, partiellement résolue, non résolue
+
+### Démarche
+
+À compléter
+
